@@ -1,0 +1,5 @@
+name: Payment Module
+description: 'Module used to pay by the user'
+type: module
+core: 8.x
+package: custom

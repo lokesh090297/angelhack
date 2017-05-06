@@ -1,0 +1,58 @@
+<?php
+namespace Drupal\bd_node\Form;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormInterface;
+use Drupal\Core\Form\FormStateInterface;
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+class CreateUser extends FormBase
+{
+  public function getFormId() 
+{
+    return 'bd_user_add';
+}
+  public function buildForm(array $form, FormStateInterface $form_state) 
+{
+     
+      $form['id'] = array(
+      '#type' => 'hidden',
+       );
+      $form['name'] = array(
+      '#type'  => 'textfield',
+      '#title' => t('UserName'),
+      );
+      $form['password'] = array(
+      '#type'  => 'textfield',
+      '#title' => t('Password'),
+      );
+      $form['email'] = array(
+      '#type'  => 'textfield',
+      '#title' => t('Email'),
+      );
+      $form['submit'] = array(
+      '#type'  => 'submit',
+      '#value' => t('Add'),
+    );
+    return $form;
+}
+  public function validateForm(array &$form, FormStateInterface $form_state)
+  { 
+  /*Nothing to validate on this form*/
+  }
+  public function submitForm(array &$form, FormStateInterface $form_state)
+  { 
+   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+   $user = \Drupal\user\Entity\User::create();
+   $password = $form_state->getValue('password');
+   $name = $form_state->getValue('name');
+   $email = $form_state->getValue('email');
+// Mandatory.
+$user->setPassword($password);
+$user->enforceIsNew();
+$user->setEmail($email);
+$user->setUsername($name);
+$user->activate();
+// Save user account.
+$result = $user->save();
+}
+}
