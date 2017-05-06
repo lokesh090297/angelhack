@@ -62,6 +62,7 @@ class GymForm extends FormBase
     $payment_amount =$form['amount']['#options'][$name];
     $mem = $form_state->getValue('co-members');
     $total = $hours*$payment_amount*$mem;
+    $user_data = \Drupal::service('entity_type.manager')->getStorage('user')->load($id);
     $result = db_query("Select payment_amount from member_payment where user_id = '" . $id . "'")->fetchCol();
     if(isset($result[0]))
     { 
@@ -78,11 +79,11 @@ class GymForm extends FormBase
           'reply-to' => $site_mail,
            'from' =>  $site_mail
           );
-       $message['subject']= 'Confirmation Link to get starting your Gyming';
+       $message['subject']= 'Confirmation Link to get start your Gyming';
        $message['body'] = '<html>
                      <body>
                           Hello ,<br>
-                           Hey there, we’re just writing to let you know that you’ve been registered with us and you get your slot by clicking on this confirmation link - angelhack.com/'.$id.'/'.$hours.'/'.$total.'<br>
+                           Hey there, we’re just writing to let you know that you’ve been registered with us and you get your slot by clicking on this confirmation link - angelhack.com/'.$id.'/'.$hours.'/'.$total.'
                           <br>
                           Sincere Thanks
                       </body>
@@ -92,8 +93,8 @@ class GymForm extends FormBase
 //  Hello, Thank you for quick response!'.$mes.
 //'</body>
 //          </html>';
-  $message['to'] = 'kirti.garg@tothenew.com';
- $result = $send_mail->mail($message);     
+     $message['to'] = $user_data->get('mail')->value;
+     $result = $send_mail->mail($message);
        }
     }
    else 
