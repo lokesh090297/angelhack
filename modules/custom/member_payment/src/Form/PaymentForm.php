@@ -1,11 +1,12 @@
 <?php
-namespace Drupal\bd_node\Form;
+namespace Drupal\member_payment\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormInterface;
 use Drupal\Core\Form\FormStateInterface;
 use \Drupal\node\Entity\Node;
 use \Drupal\file\Entity\File;
+use Drupal\user\Entity\User;
 class PaymentForm extends FormBase
 {
   public function getFormId() 
@@ -37,4 +38,8 @@ class PaymentForm extends FormBase
   }
   public function submitForm(array &$form, FormStateInterface $form_state) 
   {  
+    $current_user = \Drupal::currentUser();
+    $id = $current_user->id();
+   $result= db_query('SELECT * FROM {member_payment} WHERE id = :id', array(':id' => $id))->fetchObject();
+}
 }
