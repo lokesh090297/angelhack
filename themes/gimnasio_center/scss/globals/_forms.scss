@@ -1,0 +1,86 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Form SCSS
+ */
+
+.form-control {
+  border-radius: 0;
+  height: 31px;
+}
+
+.form-required {
+  position: relative;
+  margin-right: 15px;
+}
+.form-required::after {
+  background-size: 7px 7px;
+  position: absolute;
+  right: -10px;
+  top: 2px;
+  width: 7px;
+}
+
+.form-submit {
+  background: $blue;
+  border-radius: 0;
+  border: none;
+  color: $white;
+  &:hover,
+  &:active,
+  &:focus {
+    background: $dark-blue;
+    color: $white;
+  }
+}
+
+div[id*='edit-actions'] { margin-top: 10px; }
+
+.glyphicon {
+  top: 4px;
+  left: 2px;
+}
+
+legend {
+  border: none;
+  margin: 0;
+  .fieldset-legend {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    max-width: 100%;
+    font-size: 14px;
+  }
+}
+
+.form-type-radio,
+.form-type-radio + .form-type-radio,
+.radio .form-radio { margin: 0; }
+
+.form-file {
+  padding: 0;
+  height: auto;
+}
+
+a.button {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.filter-wrapper,
+.tabledrag-toggle-weight,
+.form-type-vertical-tabs { display: none; }
+
+.field-multiple-table {
+  thead {
+    th.form-required::after {
+      left: 80px;
+      top: 10px;
+    }
+  }
+}
+
+form[id*='contact-message-feedback-form'] {
+  button[id*='edit-preview'] { display: none; }
+}

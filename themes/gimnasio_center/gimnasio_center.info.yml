@@ -1,0 +1,30 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'Gimnasio Center'
+description: 'Custom theme for Gimnasio Center.'
+package: 'Bootstrap'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Top Bar'
+  right_nav: 'Top Right Navigation'
+  banner: 'Banner'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  footer_first: 'Footer First Column'
+  footer_second: 'Footer Second Column'
+  footer_third: 'Footer Third Column'
+  footer_fourth: 'Footer Fourth Column'
+  footer_nav: 'Footer Navigation'
+  footer: 'Footer'
+
+libraries:
+  - 'gimnasio_center/global-styling'

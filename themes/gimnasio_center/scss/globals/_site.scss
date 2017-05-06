@@ -1,0 +1,39 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Site css
+ */
+
+.main-container {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.nav-tabs {
+  margin-bottom: 20px;
+  li a {
+    border-radius: 0;
+    background: $blue;
+    color: $white;
+    &:hover,
+    &:active,
+    &:focus {
+      background: $dark-blue;
+    }
+  }
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.highlighted {
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .nav-tabs li { width: 100%; }
+}
