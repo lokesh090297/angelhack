@@ -1,0 +1,22 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+function UserRole_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+
+    if ($form_id == "user_register_form") {
+        $form['select_roles']['#cache']['max-age'] = 0;
+        if(\Drupal::service('path.current')->getPath()== "/node/4"){
+          $form['select_roles']['#default_value']='gym_member';
+        
+        }elseif(\Drupal::service('path.current')->getPath()== "/node/3"){ 
+          $form['select_roles']['#default_value']='gym';
+        
+        }
+    }
+}

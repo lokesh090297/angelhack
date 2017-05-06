@@ -1,0 +1,6 @@
+name: User Role
+description: This will create a new field on registration form and provide field.
+type: module
+
+core: 8.x
+package: custom
