@@ -1,7 +1,14 @@
 payment_form:
-  path: '/test'
+  path: '/Memberpayment'
   defaults:
     _form: '\Drupal\member_payment\Form\PaymentForm'
+    _title: 'Payment'
+  requirements:
+    _permission: 'access content'
+gym_form:
+  path: '/gymform'
+  defaults:
+    _form: '\Drupal\member_payment\Form\GymForm'
     _title: 'Payment'
   requirements:
     _permission: 'access content'
