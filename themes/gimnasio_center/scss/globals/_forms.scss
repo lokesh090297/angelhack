@@ -29,6 +29,7 @@
   border: 1px solid $white;
   &:hover,
   &:active,
+  &:visited,
   &:focus {
     background: $black;
     border: 1px solid $white;

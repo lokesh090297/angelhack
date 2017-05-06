@@ -6463,7 +6463,7 @@ video {
   border-radius: 0;
   color: #FFF;
   border: 1px solid #FFF; }
-  .form-submit:hover, .form-submit:active, .form-submit:focus {
+  .form-submit:hover, .form-submit:active, .form-submit:visited, .form-submit:focus {
     background: #000;
     border: 1px solid #FFF; }
 
