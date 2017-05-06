@@ -51,8 +51,20 @@ class CustomForm extends FormBase{
   $height=$form_state->getValue('Height');
   $weight=$form_state->getValue('weight');
       if($height>0 && $weight>0){
+        $height=$height/100;
         $result= round($weight/($height*$height));
-        $response->addCommand(new \Drupal\Core\Ajax\HtmlCommand('#result',$result));
+        if ($result <= 18.5){
+        $text_bmi='Under Weight';
+        }
+        elseif ($result > 18.5 && $result <= 24.9) {
+        $text_bmi='Normal Weight';
+      }elseif ($result >24.9 && $result <= 29.9){
+        $text_bmi='Over Weight';
+       }else{
+         $text_bmi='Obesity';
+       }
+              
+        $response->addCommand(new \Drupal\Core\Ajax\HtmlCommand('#result',$result."  ".$text_bmi));
       }else{
         $response->addCommand(new \Drupal\Core\Ajax\HtmlCommand('#result',"Enter the correct Height and weigth"));
         
