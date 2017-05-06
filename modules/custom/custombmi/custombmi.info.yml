@@ -1,0 +1,6 @@
+name: Custom BMI
+description: This is the custom module for the BMI testing.
+type: module
+
+package: custom
+core: 8.x

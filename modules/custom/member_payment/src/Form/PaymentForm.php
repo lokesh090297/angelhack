@@ -33,15 +33,17 @@ class PaymentForm extends FormBase
     return $form;
 }
   public function validateForm(array &$form, FormStateInterface $form_state) 
-  { 
-  /*Nothing to validate on this form*/
+  { $name=$form_state->getValue('payment_amount');
+    if (!preg_match("/^[1-9][0-9]*$/", $name)) 
+     {
+     $form_state->setErrorByName('Add amount to your wallet', t('INCORRENT AMOUNT'));
+     }
   }
   public function submitForm(array &$form, FormStateInterface $form_state) 
   {  
     $current_user = \Drupal::currentUser();
     $id = $current_user->id();
     $payment_amount = $form_state->getValue('payment_amount');
-    $id = 2;
     $result = db_query("Select payment_amount from member_payment where user_id = '" . $id . "'")->fetchCol();
     if(isset($result[0]))
     {
