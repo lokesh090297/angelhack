@@ -1,0 +1,21 @@
+# Ignore paths that contain user-generated content.
+/files
+sites/*/files
+sites/*/private
+.sass-cache
+themes/infoplease/css/style.css.map
+
+# Do not commit local settings files.
+settings.local.php
+
+##########
+# site specific local changes
+adminer.php
+sites/sites.php
+sites/default/settings.php
+.htaccess
+##########
+# Ignore IDE configuration files (they contain user-specific workspaces).
+nbproject/
+.idea
+*.iml
