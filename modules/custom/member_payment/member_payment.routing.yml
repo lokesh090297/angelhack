@@ -9,6 +9,6 @@ gym_form:
   path: '/gymform'
   defaults:
     _form: '\Drupal\member_payment\Form\GymForm'
-    _title: 'Payment'
+    _title: 'Add Your Gym Member'
   requirements:
     _permission: 'access content'
