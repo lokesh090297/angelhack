@@ -12,10 +12,9 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 
-class CurrencyConvertorBlock extends BlockBase{
+class Placement extends BlockBase{
   
   public function build() {
-   
     $build['form']= \Drupal::formBuilder()->getForm('Drupal\custombmi\Form\CustomForm');
     
     return $build;
