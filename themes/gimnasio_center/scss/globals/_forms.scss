@@ -23,15 +23,15 @@
 }
 
 .form-submit {
-  background: $blue;
+  background: $orange;
   border-radius: 0;
-  border: none;
   color: $white;
+  border: 1px solid $white;
   &:hover,
   &:active,
   &:focus {
-    background: $dark-blue;
-    color: $white;
+    background: $black;
+    border: 1px solid $white;
   }
 }
 

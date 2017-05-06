@@ -6,20 +6,21 @@
  */
 
 .main-container {
-  margin-bottom: 20px;
   text-align: justify;
+  background: $orange;
+  position: relative;
+  z-index: 0;
+  padding: 20px 0;
 }
 
 .nav-tabs {
   margin-bottom: 20px;
   li a {
     border-radius: 0;
-    background: $blue;
     color: $white;
     &:hover,
-    &:active,
     &:focus {
-      background: $dark-blue;
+      background: transparent;
     }
   }
 }
@@ -30,8 +31,12 @@
   color: #3c763d;
 }
 
-.highlighted {
-  margin-top: 20px;
+.page-header {
+  border-bottom: none;
+  font-size: 30px;
+  margin-top: 0;
+  text-transform: uppercase;
+  margin-top: 0;
 }
 
 @media (max-width: 480px) {

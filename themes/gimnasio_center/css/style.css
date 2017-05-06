@@ -6378,7 +6378,8 @@ p:last-child,
 
 body {
   font-family: sans-serif;
-  margin-top: 0; }
+  margin-top: 0;
+  color: #FFF; }
 
 a {
   text-decoration: none; }
@@ -6404,14 +6405,38 @@ video {
  * @file
  * SCSS file to generate CSS.
  *
- * Header SCSS.
+ * Site css
  */
-/**
- * @file
- * SCSS file to generate CSS.
- *
- * Footer SCSS.
- */
+.main-container {
+  text-align: justify;
+  background: #EC3642;
+  position: relative;
+  z-index: 0;
+  padding: 20px 0; }
+
+.nav-tabs {
+  margin-bottom: 20px; }
+  .nav-tabs li a {
+    border-radius: 0;
+    color: #FFF; }
+    .nav-tabs li a:hover, .nav-tabs li a:focus {
+      background: transparent; }
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d; }
+
+.page-header {
+  border-bottom: none;
+  font-size: 30px;
+  margin-top: 0;
+  text-transform: uppercase;
+  margin-top: 0; }
+
+@media (max-width: 480px) {
+  .nav-tabs li {
+    width: 100%; } }
 /**
  * @file
  * SCSS file to generate CSS.
@@ -6434,13 +6459,13 @@ video {
   width: 7px; }
 
 .form-submit {
-  background: #007b94;
+  background: #EC3642;
   border-radius: 0;
-  border: none;
-  color: #FFF; }
+  color: #FFF;
+  border: 1px solid #FFF; }
   .form-submit:hover, .form-submit:active, .form-submit:focus {
-    background: #015c6c;
-    color: #FFF; }
+    background: #000;
+    border: 1px solid #FFF; }
 
 div[id*='edit-actions'] {
   margin-top: 10px; }
@@ -6488,32 +6513,100 @@ form[id*='contact-message-feedback-form'] button[id*='edit-preview'] {
  * @file
  * SCSS file to generate CSS.
  *
- * Site css
+ * Header SCSS.
  */
-.main-container {
-  margin-bottom: 20px;
-  text-align: justify; }
-
-.nav-tabs {
-  margin-bottom: 20px; }
-  .nav-tabs li a {
+#navbar {
+  margin: 0;
+  border: none; }
+  #navbar .navigation {
+    position: relative;
+    background: #000;
+    width: 100%;
+    z-index: 1;
     border-radius: 0;
-    background: #007b94;
-    color: #FFF; }
-    .nav-tabs li a:hover, .nav-tabs li a:active, .nav-tabs li a:focus {
-      background: #015c6c; }
+    margin: 0; }
+    #navbar .navigation .navbar-header {
+      margin: 10px;
+      padding: 10px; }
+      #navbar .navigation .navbar-header .navbar-brand {
+        color: #EC3642;
+        display: block;
+        float: none;
+        font-size: 30px;
+        height: auto;
+        padding: 0;
+        text-transform: uppercase; }
+      #navbar .navigation .navbar-header .navbar-text {
+        color: #FFF;
+        float: none;
+        font-size: 16px;
+        margin: 2px 0 0;
+        text-align: right;
+        text-transform: uppercase;
+        width: 100%; }
+    #navbar .navigation #navbar-collapse .navbar-nav {
+      margin-top: 10px; }
+      #navbar .navigation #navbar-collapse .navbar-nav li {
+        margin-left: 1px; }
+        #navbar .navigation #navbar-collapse .navbar-nav li a {
+          color: #FFF; }
+          #navbar .navigation #navbar-collapse .navbar-nav li a:hover, #navbar .navigation #navbar-collapse .navbar-nav li a:focus, #navbar .navigation #navbar-collapse .navbar-nav li a.is-active {
+            background: #EC3642; }
+  #navbar .top-head #block-parallax {
+    position: relative; }
+    #navbar .top-head #block-parallax h2 {
+      font-size: 45px;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+      font-weight: bold;
+      top: -webkit-calc(50% - 20px);
+      top: -moz-calc(50% - 20px);
+      top: calc(50% - 20px); }
 
-.alert-success {
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #3c763d; }
+.path-frontpage #navbar {
+  position: fixed; }
+  .path-frontpage #navbar .navigation {
+    background: transparent;
+    position: absolute; }
 
-.highlighted {
-  margin-top: 20px; }
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Footer SCSS.
+ */
+.footer {
+  background: #000;
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  padding: 0; }
+  .footer .footer_nav {
+    margin: 15px 0; }
+    .footer .footer_nav li {
+      float: left; }
+      .footer .footer_nav li a {
+        color: #FFF;
+        padding: 0; }
+        .footer .footer_nav li a:hover, .footer .footer_nav li a.is-active {
+          background: transparent;
+          border-bottom: 1px solid; }
+  .footer .footer_bottom {
+    padding: 0 0 10px 0; }
+    .footer .footer_bottom #block-copyright p {
+      font-size: 10px; }
 
-@media (max-width: 480px) {
-  .nav-tabs li {
-    width: 100%; } }
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Sidebar SCSS.
+ */
+#search-block-form button {
+  padding: 4px 10px 4px 5px; }
+
  /**
 * @file
 * SCSS file to generate CSS.
