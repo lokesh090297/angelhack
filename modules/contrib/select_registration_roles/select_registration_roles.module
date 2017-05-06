@@ -61,23 +61,33 @@ function select_registration_roles_form_alter(&$form, \Drupal\Core\Form\FormStat
  */
 function select_registration_roles_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
 {
-    $name = $form_state->getValues()['name'];
-    $uid = getUid($name);
+    $name = $form_state->getValues()['mail'];
+    //kint($name);die;
+    //$uid = getUid($name);
     $select_roles = $form_state->getValue('select_roles');
     $config = \Drupal::config('select_registration_roles.settings');
     $display_roles = $config->get('select_registration_roles_setby_admin');
     $approval_roles = $config->get('select_registration_roles_admin_approval');
-    $user = \Drupal\user\Entity\User::load($uid);
+    $user = user_load_by_mail($name);
+//    user_load_by_mail($mail)
     foreach ($display_roles as $role_id => $role_name) {
         if ($role_name !== 0) {
             if ($role_id === $select_roles) {
                 //if approval
                 if ($approval_roles[$role_id] === $display_roles[$role_id]) {
-                    $user->block();
+                    //$user->block();
                     //If not.
                 } else {
+                  if (is_null($role_id)) {
+                    continue;
+                   }
+                   
+//                    $tt = $user->getRoles(TRUE);
+//                    kint($tt);die;
                     $user->addRole($role_id);
-                    $user->activate();
+                    
+                    
+                    //$user->activate();
                 }
             }
             $user->save();
