@@ -1,0 +1,45 @@
+<?php
+namespace Drupal\bd_node\Form;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormInterface;
+use Drupal\Core\Form\FormStateInterface;
+class DeleteTax extends FormBase
+{
+public  function getFormId() 
+{
+    return 'bd_tax_delete';
+}
+
+  public function buildForm(array $form, FormStateInterface $form_state) 
+  {
+      $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Delete'),
+    );
+    return $form;
+  }
+
+ public  function validateForm(array &$form, FormStateInterface $form_state)
+  {
+    /*Nothing to validate on this form*/
+  }
+
+  public function submitForm(array &$form, FormStateInterface $form_state) 
+  {
+   $current_path = \Drupal::service('path.current')->getPath();
+   $path_args = explode('/', $current_path);
+   $id=$path_args[5];
+  
+  /* if($id)
+   {
+     $query = \Drupal::entityQuery('node') ->condition('type', 'article');
+     $nids = $query->execute();
+     debug($nids);
+    foreach ($nids as $nid) 
+    {*/
+    if($id)
+    {
+     \Drupal\taxonomy\Entity\Term::load($id)->delete(); 
+    }
+   }  
+}

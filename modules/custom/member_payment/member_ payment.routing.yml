@@ -1,0 +1,7 @@
+payment_form:
+  path: '/Memberpayment'
+  defaults:
+    _form: '\Drupal\member_payment\Form\PaymentForm'
+    _title: 'Create contact'
+  requirements:
+    _permission: 'use bd node form'

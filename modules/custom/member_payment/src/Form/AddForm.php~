@@ -1,0 +1,106 @@
+<?php
+namespace Drupal\bd_node\Form;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Form\FormInterface;
+use Drupal\Core\Form\FormStateInterface;
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+class AddForm extends FormBase
+{
+  public function getFormId() 
+{
+    return 'bd_node_add';
+}
+  public function buildForm(array $form, FormStateInterface $form_state) 
+{
+
+//global $base_url;
+      $id      = \Drupal::request()->get('id');
+      $load    = Node::load($id);
+      $name    = $load->title->value;
+      $message = $load->body->value;
+      $photo   = $load->field_image->value;   
+      if ($id != NULL) 
+      {
+      	$form['id'] = array(
+      		'#type' => 'hidden',
+      		'#default_value' => $id,
+       	);
+      }
+      $form['name'] = array(
+      '#type'  => 'textfield',
+      '#title' => t('Name'),
+      '#required' => TRUE,
+      '#default_value'=> (isset($name)) ? $name :'',
+      );
+      $form['message'] = array(
+      '#type'  => 'text_format',
+      '#title' => t('Message'),
+      '#required' => TRUE,
+      '#default_value' => (isset($message))? $message :'',
+      );
+       $form['flag'] = array(
+      '#type'  => 'textfield',
+      '#title' => t('flag'),
+      '#required' => TRUE,
+      '#default_value'=> (isset($flag)) ? $flag :'',
+      ); 
+      $form['photo'] = array(
+      '#type' => 'managed_file',
+      '#upload_validators'  => array(
+		  'file_validate_extensions' => array('gif png jpg jpeg'),
+		  ),
+      '#upload_location' => 'public://bd_images/',  
+      '#description' => t('The uploaded image will be displayed on this page using the image style choosen below.'),  
+      '#default_value' => (isset($photo))? $photo :'',
+      
+      );
+     
+      $form['submit'] = array(
+      '#type'  => 'submit',
+      '#value' => t('Add'),
+    );
+    return $form;
+}
+  public function validateForm(array &$form, FormStateInterface $form_state) 
+  { 
+  /*Nothing to validate on this form*/
+  }
+  public function submitForm(array &$form, FormStateInterface $form_state) 
+  {  
+   //print_r($_POST);die; 
+    	$id = $form_state->getValue('id');
+  if ($id) 
+  {
+
+  	$load = Node::load($id);
+  	$load->title =  $form_state->getValue('name');
+  	$load->body = [
+		'value'  => $form_state->getValue('message'),
+		'format' => 'basic_html',
+		];
+		$load->field_image = $form_state->getValue('photo')[0];
+		$load->save();
+  }
+  else
+ {
+ 	  $message_body= $form_state->getValue('message');
+  	$node = Node::create([
+		'type'        => 'article',
+		'title'       => $form_state->getValue('name'),
+		'body'   => [
+		'value'  =>  $message_body['value'],
+		'format' => $message_body['format'],
+		],
+		'field_image' => $form_state->getValue('photo'),	
+		 	]);
+		 	
+		 $node->save();
+		 
+		 drupal_set_message("Node created.");
+  }
+   //$last_id = db_query('SELECT MAX(nid) FROM {node}')->fetchField();
+	 //db_query("insert into bd_node values (NULL, $last_id)" );  	 
+  }
+}
