@@ -1,0 +1,7 @@
+payment_form:
+  path: '/test'
+  defaults:
+    _form: '\Drupal\member_payment\Form\PaymentForm'
+    _title: 'Payment'
+  requirements:
+    _permission: 'access content'
