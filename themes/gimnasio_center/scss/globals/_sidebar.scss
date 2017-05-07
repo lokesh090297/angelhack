@@ -10,3 +10,20 @@
     padding: 4px 10px 4px 5px;
   }
 }
+
+.region-sidebar-second {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  .bmiform {
+    label,
+    span{ color: $black !important;
+        font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 5px;
+     }
+     #result { color: $black !important; 
+      margin-top:10px; 
+    }
+  }
+}

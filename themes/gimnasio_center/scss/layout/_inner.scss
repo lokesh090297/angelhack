@@ -7,8 +7,9 @@
 
  .page-node-type-register-pages .tabs { display:none; }
 
-.path-gym-profile {
-  .page-header { display: none; }
+.path-gym-profile .page-header { display: none; }
+.path-gym-profile,
+.page-node-type-gym-info {
   article {
     h2 {
       margin-bottom: 20px;
@@ -35,4 +36,26 @@
   .tabs {
     li:nth-child(2) { display: none; }
   }
+}
+
+.view-discover-gym {
+  .views-col {
+    margin-right: 20px;
+    .views-field-title {
+      text-align: left;
+      background: rgba(0,0,0,0.5);
+      a {
+      color: $white;
+      padding:5px 10px;
+      width: 100%;
+      display: block;
+    }
+  }
+  }
+}
+#block-amountblock {
+  margin-bottom: 20px;
+  font-size: 20px; 
+  margin-top: 20px;
+  .block-title { display: none; }
 }

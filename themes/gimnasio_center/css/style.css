@@ -6664,6 +6664,20 @@ form label {
 #search-block-form button {
   padding: 4px 10px 4px 5px; }
 
+.region-sidebar-second {
+  background: transparent;
+  border: none;
+  box-shadow: none; }
+  .region-sidebar-second .bmiform label,
+  .region-sidebar-second .bmiform span {
+    color: #000 !important;
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 5px; }
+  .region-sidebar-second .bmiform #result {
+    color: #000 !important;
+    margin-top: 10px; }
+
  /**
 * @file
 * SCSS file to generate CSS.
@@ -6720,21 +6734,45 @@ form label {
 
 .path-gym-profile .page-header {
   display: none; }
-.path-gym-profile article h2 {
+
+.path-gym-profile article h2,
+.page-node-type-gym-info article h2 {
   margin-bottom: 20px; }
-  .path-gym-profile article h2 a {
+  .path-gym-profile article h2 a,
+  .page-node-type-gym-info article h2 a {
     color: #FFF;
     margin-top: 0;
     text-transform: uppercase; }
-.path-gym-profile article .field {
+.path-gym-profile article .field,
+.page-node-type-gym-info article .field {
   margin-bottom: 10px; }
-  .path-gym-profile article .field .field--label {
+  .path-gym-profile article .field .field--label,
+  .page-node-type-gym-info article .field .field--label {
     width: 200px;
     float: left; }
-  .path-gym-profile article .field .field--item {
+  .path-gym-profile article .field .field--item,
+  .page-node-type-gym-info article .field .field--item {
     padding-left: 200px; }
 
 .path-user .tabs li:nth-child(2) {
   display: none; }
+
+.view-discover-gym .views-col {
+  margin-right: 20px; }
+  .view-discover-gym .views-col .views-field-title {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.5); }
+    .view-discover-gym .views-col .views-field-title a {
+      color: #FFF;
+      padding: 5px 10px;
+      width: 100%;
+      display: block; }
+
+#block-amountblock {
+  margin-bottom: 20px;
+  font-size: 20px;
+  margin-top: 20px; }
+  #block-amountblock .block-title {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */
