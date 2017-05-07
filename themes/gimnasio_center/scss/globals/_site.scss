@@ -58,6 +58,8 @@
   margin-top: 0;
 }
 
+.breadcrumb { display: none; }
+
 @media (max-width: 480px) {
   .nav-tabs li { width: 100%; }
 }
