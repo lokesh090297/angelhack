@@ -4,11 +4,18 @@ payment_form:
     _form: '\Drupal\member_payment\Form\PaymentForm'
     _title: 'Payment'
   requirements:
-    _permission: 'access content'
+    _permission: 'bd_node test'
 gym_form:
   path: '/gymform'
   defaults:
     _form: '\Drupal\member_payment\Form\GymForm'
     _title: 'Add Your Gym Member'
+  requirements:
+    _permission: 'bd_node test2'
+deductpayment_controller:
+  path: '/deductpayment/{user_id}/{hours}/{total}'
+  defaults:
+    _controller: '\Drupal\member_payment\Controller\Deductpayment::content'
+    _title: 'Your Wallet'
   requirements:
     _permission: 'access content'

@@ -1,0 +1,6 @@
+bd_node test:
+  title: 'My Member Permission'
+  description: 'My Member permission'
+bd_node test2:
+  title: 'My Gym Permission'
+  description: 'My Gym permission'

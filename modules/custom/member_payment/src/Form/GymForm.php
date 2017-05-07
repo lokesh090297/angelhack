@@ -15,7 +15,7 @@ class GymForm extends FormBase
 }
   public function buildForm(array $form, FormStateInterface $form_state) 
 {
-      $ac =array(1000,2000,3000
+      $ac =array(100,200,300
        );
          $form['user_id'] = array(
       	'#type'  => 'textfield',
@@ -56,6 +56,7 @@ class GymForm extends FormBase
   }
   public function submitForm(array &$form, FormStateInterface $form_state) 
   {  
+    global $base_url;
     $id = $form_state->getValue('user_id');
     $hours = $form_state->getValue('hours');
     $name=$form_state->getValue('amount');
@@ -66,9 +67,9 @@ class GymForm extends FormBase
     $result = db_query("Select payment_amount from member_payment where user_id = '" . $id . "'")->fetchCol();
     if(isset($result[0]))
     { 
-       if($result[0] == 0)
+       if($result[0] < $total)
        {
-          drupal_set_message("No amount in your wallet");
+          drupal_set_message("Amount insufficient");
        }
        else {
           $site_mail = \Drupal::config('system.site')->get('mail');
@@ -95,6 +96,7 @@ class GymForm extends FormBase
 //          </html>';
      $message['to'] = $user_data->get('mail')->value;
      $result = $send_mail->mail($message);
+     drupal_set_message(' Your Confirmation link sent:'.$base_url.'/deductpayment/'.$id.'/'.$hours.'/'.$total);
        }
     }
    else 
