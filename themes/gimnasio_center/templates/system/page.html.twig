@@ -93,6 +93,14 @@
             {% endif %}
           </div>
       </div>
+
+        {# Highlighted #}
+        {% if page.highlighted %}
+          {% block highlighted %}
+            <div class="highlighted">{{ page.highlighted }}</div>
+          {% endblock %}
+        {% endif %}
+
       <div class="top-head">
         {# Header #}
         {% if page.header %}
@@ -113,6 +121,7 @@
   <div role="main" class="main-container js-quickedit-main-content">
     <div class="container">
       <div class="row">
+
         {# Sidebar First #}
         {% if page.sidebar_first %}
           {% block sidebar_first %}
@@ -132,20 +141,6 @@
           ]
         %}
         <section{{ content_attributes.addClass(content_classes) }}>
-
-          {# Highlighted #}
-          {% if page.highlighted %}
-            {% block highlighted %}
-              <div class="highlighted">{{ page.highlighted }}</div>
-            {% endblock %}
-          {% endif %}
-
-          {# Breadcrumbs #}
-          {% if breadcrumb %}
-            {% block breadcrumb %}
-              {{ breadcrumb }}
-            {% endblock %}
-          {% endif %}
 
           {# Action Links #}
           {% if action_links %}

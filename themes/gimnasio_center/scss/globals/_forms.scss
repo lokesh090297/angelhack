@@ -27,6 +27,7 @@
   border-radius: 0;
   color: $white;
   border: 1px solid $white;
+  font-size: 16px;
   &:hover,
   &:active,
   &:visited,
@@ -85,3 +86,10 @@ a.button {
 form[id*='contact-message-feedback-form'] {
   button[id*='edit-preview'] { display: none; }
 }
+
+form label {
+  font-size: 16px;
+  color: $white !important;
+}
+
+#edit-select-roles--wrapper { display: none; }

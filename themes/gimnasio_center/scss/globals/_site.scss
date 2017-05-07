@@ -13,18 +13,37 @@
   padding: 20px 0;
 }
 
-.nav-tabs {
+.nav-tabs,
+#block-registration-2 ul {
   margin-bottom: 20px;
-  li a {
-    border-radius: 0;
-    color: $white;
-    &:hover,
-    &:focus {
-      background: transparent;
+  border-bottom: 1px solid $white;
+  li {
+    float: left;
+    border: none;
+    a {
+      border-radius: 0;
+      color: $white;
+      margin: 0;
+      border: none;
+      &:hover,
+      &:focus {
+        background: transparent;
+        border: none;
+        color: $dark-grey;
+      }
+      &.is-active {
+        background: $white;
+        color: $dark-grey;
+        border: none;
+      }
+    }
+    &.active {
+      border: none;
     }
   }
 }
 
+.alert { margin-bottom: 0; }
 .alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
@@ -38,6 +57,8 @@
   text-transform: uppercase;
   margin-top: 0;
 }
+
+.breadcrumb { display: none; }
 
 @media (max-width: 480px) {
   .nav-tabs li { width: 100%; }
