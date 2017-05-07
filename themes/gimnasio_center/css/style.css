@@ -6554,16 +6554,30 @@ form[id*='contact-message-feedback-form'] button[id*='edit-preview'] {
             background: #EC3642; }
   #navbar .top-head #block-parallax {
     position: relative; }
-    #navbar .top-head #block-parallax h2 {
-      font-size: 45px;
+    #navbar .top-head #block-parallax .center_text {
       position: absolute;
+      width: 100%;
       text-align: center;
       text-transform: uppercase;
-      width: 100%;
-      font-weight: bold;
-      top: -webkit-calc(50% - 20px);
-      top: -moz-calc(50% - 20px);
-      top: calc(50% - 20px); }
+      top: -webkit-calc(50% - 100px);
+      top: -moz-calc(50% - 100px);
+      top: calc(50% - 100px); }
+      #navbar .top-head #block-parallax .center_text h2 {
+        font-size: 45px;
+        font-weight: bold;
+        margin-bottom: 0; }
+      #navbar .top-head #block-parallax .center_text .text {
+        font-size: 16px;
+        margin-bottom: 10px; }
+      #navbar .top-head #block-parallax .center_text .links a {
+        color: #FFF;
+        background: #EC3642;
+        display: inline-block;
+        margin-right: 10px;
+        padding: 10px 20px;
+        font-size: 16px; }
+        #navbar .top-head #block-parallax .center_text .links a:nth-child(1) {
+          background: #343434; }
 
 .path-frontpage #navbar {
   position: fixed; }
@@ -6613,5 +6627,27 @@ form[id*='contact-message-feedback-form'] button[id*='edit-preview'] {
 *
 * Home page SCSS
 */
+#block-guidelines ul {
+  padding: 0; }
+  #block-guidelines ul li {
+    float: left;
+    font-size: 16px;
+    list-style: outside none none;
+    margin: 0 25px 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: -webkit-calc(25% - 25px);
+    width: -moz-calc(25% - 25px);
+    width: calc(25% - 25px); }
+    #block-guidelines ul li span {
+      color: #FFF;
+      background: #171717;
+      border-radius: 10px;
+      display: inline-block;
+      font-size: 30px;
+      margin-right: 10px;
+      margin-top: -20px;
+      padding: 10px;
+      width: 60px; }
 
 /*# sourceMappingURL=style.css.map */

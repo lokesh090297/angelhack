@@ -4,3 +4,29 @@
  *
  * Home page SCSS
  */
+
+#block-guidelines {
+  ul {
+    padding: 0;
+    li {
+      float: left;
+      font-size: 16px;
+      list-style: outside none none;
+      margin: 0 25px 0 auto;
+      text-align: center;
+      text-transform: uppercase;
+      @include calc('width', '25% - 25px');
+      span {
+        color: $white;
+        background: $dark-grey;
+        border-radius: 10px;
+        display: inline-block;
+        font-size: 30px;
+        margin-right: 10px;
+        margin-top: -20px;
+        padding: 10px;
+        width: 60px;
+      }
+    }
+  }
+}

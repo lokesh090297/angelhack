@@ -181,6 +181,11 @@
   </div>
 {% endblock %}
 
+{# Content Bottom #}
+{% if page.content_bottom %}
+  {{ page.content_bottom }}
+{% endif %}
+
 {%  set columns = page.footer_first or page.footer_second or page.footer_third or page.footer_fourth ? 'columns' %}
 
 {% if page.footer or columns %}
