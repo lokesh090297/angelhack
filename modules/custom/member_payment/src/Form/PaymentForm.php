@@ -33,7 +33,8 @@ class PaymentForm extends FormBase
     return $form;
 }
   public function validateForm(array &$form, FormStateInterface $form_state) 
-  { $name=$form_state->getValue('payment_amount');
+  { 
+    $name=$form_state->getValue('payment_amount');
     if (!preg_match("/^[1-9][0-9]*$/", $name)) 
      {
      $form_state->setErrorByName('Add amount to your wallet', t('INCORRENT AMOUNT'));
@@ -47,12 +48,14 @@ class PaymentForm extends FormBase
     $result = db_query("Select payment_amount from member_payment where user_id = '" . $id . "'")->fetchCol();
     if(isset($result[0]))
     {
-     $upd_amt = $result[0]-$payment_amount;  
+      $upd_amt = $result[0]+$payment_amount;  
       db_query("Update member_payment set payment_amount='$upd_amt' where user_id='$id'");
+      drupal_set_message('Updated Amount in your wallet : '.$payment_amount);
     }
    else 
     {
       db_query("insert into member_payment values ('$id','$payment_amount')" );
+      drupal_set_message('Amount in your wallet : '.$payment_amount);
     }
     
 }
