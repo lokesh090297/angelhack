@@ -2,7 +2,7 @@
 UserRole.member.link:
   path: '/memberregister'
   defaults:
-    _controller: ''
+    _controller: 'Drupal\UserRole\Controller\RegistrationRedirect::getRedirect'
     _title: 'Member Register'
   requirements:
     _permission: 'view gym link'

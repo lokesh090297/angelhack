@@ -1,0 +1,7 @@
+filterdata.form:
+  path: '/testtocheck'
+  defaults:
+    _form: 'Drupal\filterdata\Form\CustomSearchForm'
+    _title: 'Search Form'
+  requirements:
+    _permission: 'access content'

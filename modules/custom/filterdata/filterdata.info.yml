@@ -1,0 +1,6 @@
+name: Filter Data
+description: This module will help you search a text.
+type: module
+
+package: custom
+core: 8.x
