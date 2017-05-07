@@ -6693,11 +6693,18 @@ form label {
       padding: 10px;
       width: 60px; }
 
-#block-keepyourbodyfitandstrong h2 {
-  position: absolute;
-  top: -webkit-calc(50% - 25px);
-  top: -moz-calc(50% - 25px);
-  top: calc(50% - 25px); }
+#block-keepyourbodyfitandstrong {
+  position: relative;
+  z-index: 1; }
+  #block-keepyourbodyfitandstrong h2 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 50px;
+    top: -webkit-calc(50% - 25px);
+    top: -moz-calc(50% - 25px);
+    top: calc(50% - 25px); }
 
 /**
  * @file
