@@ -13,14 +13,32 @@
   padding: 20px 0;
 }
 
-.nav-tabs {
+.nav-tabs,
+#block-registration-2 ul {
   margin-bottom: 20px;
-  li a {
-    border-radius: 0;
-    color: $white;
-    &:hover,
-    &:focus {
-      background: transparent;
+  border-bottom: 1px solid $white;
+  li {
+    float: left;
+    border: none;
+    a {
+      border-radius: 0;
+      color: $white;
+      margin: 0;
+      border: none;
+      &:hover,
+      &:focus {
+        background: transparent;
+        border: none;
+        color: $dark-grey;
+      }
+      &.is-active {
+        background: $white;
+        color: $dark-grey;
+        border: none;
+      }
+    }
+    &.active {
+      border: none;
     }
   }
 }

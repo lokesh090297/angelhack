@@ -4,7 +4,7 @@
  *
  * Home page SCSS
  */
-
+.view-frontpage { display: none; }
 #block-guidelines {
   ul {
     padding: 0;
@@ -28,5 +28,12 @@
         width: 60px;
       }
     }
+  }
+}
+
+#block-keepyourbodyfitandstrong {
+  h2 {
+    position: absolute;
+    @include calc('top', '50% - 25px');
   }
 }
