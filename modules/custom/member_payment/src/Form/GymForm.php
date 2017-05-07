@@ -29,7 +29,7 @@ class GymForm extends FormBase
       ); 
          $form['co-members'] = array(
          '#type'  => 'textfield',
-         '#title' => t('Co-Gymmembers'),
+         '#title' => t('Total members'),
          '#required' => TRUE,
       ); 
           $form['amount'] = array(

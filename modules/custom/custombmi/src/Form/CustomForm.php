@@ -17,15 +17,13 @@ class CustomForm extends FormBase{
     ];
     $form['BMI']['weight']=[
       '#type' => 'number',
-      '#title' => $this->t('Weight'),
+      '#title' => $this->t('Weight (Kgs)'),
       '#required' => TRUE,
-      '#suffix' => '<span>Kgs</span>'
     ];
     $form['BMI']['Height']=[
       '#type' => 'number',
-      '#title' => $this->t('Height'),
+      '#title' => $this->t('Height (cms)'),
       '#required' => TRUE,
-      '#suffix' => '<span>cms</span>'
     ];
     $form['BMI']['calculate']=[
       '#type' =>'submit',
