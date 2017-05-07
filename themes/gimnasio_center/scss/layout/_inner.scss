@@ -6,4 +6,33 @@
  */
 
  .page-node-type-register-pages .tabs { display:none; }
- 
+
+.path-gym-profile {
+  .page-header { display: none; }
+  article {
+    h2 {
+      margin-bottom: 20px;
+      a {
+        color: $white;
+        margin-top: 0;
+        text-transform: uppercase;
+      }
+    }
+    .field {
+      margin-bottom: 10px;
+      .field--label {
+        width: 200px;
+        float: left;
+      }
+      .field--item {
+        padding-left: 200px;
+      }
+    }
+  }
+}
+
+.path-user {
+  .tabs {
+    li:nth-child(2) { display: none; }
+  }
+}

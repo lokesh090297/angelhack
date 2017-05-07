@@ -6443,6 +6443,9 @@ video {
     #block-registration-2 ul li.active {
       border: none; }
 
+.alert {
+  margin-bottom: 0; }
+
 .alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
@@ -6532,7 +6535,8 @@ form[id*='contact-message-feedback-form'] button[id*='edit-preview'] {
   display: none; }
 
 form label {
-  font-size: 16px; }
+  font-size: 16px;
+  color: #FFF !important; }
 
 #edit-select-roles--wrapper {
   display: none; }
@@ -6613,6 +6617,13 @@ form label {
   .path-frontpage #navbar .navigation {
     background: transparent;
     position: absolute; }
+.path-frontpage .highlighted {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: -webkit-calc(50% - 160px);
+  top: -moz-calc(50% - 160px);
+  top: calc(50% - 160px); }
 
 /**
  * @file
@@ -6695,6 +6706,25 @@ form label {
  * Inner page SCSS
  */
 .page-node-type-register-pages .tabs {
+  display: none; }
+
+.path-gym-profile .page-header {
+  display: none; }
+.path-gym-profile article h2 {
+  margin-bottom: 20px; }
+  .path-gym-profile article h2 a {
+    color: #FFF;
+    margin-top: 0;
+    text-transform: uppercase; }
+.path-gym-profile article .field {
+  margin-bottom: 10px; }
+  .path-gym-profile article .field .field--label {
+    width: 200px;
+    float: left; }
+  .path-gym-profile article .field .field--item {
+    padding-left: 200px; }
+
+.path-user .tabs li:nth-child(2) {
   display: none; }
 
 /*# sourceMappingURL=style.css.map */

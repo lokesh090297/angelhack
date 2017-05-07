@@ -96,4 +96,10 @@
       position: absolute;
     }
   }
+  .highlighted {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    @include calc('top', '50% - 160px');
+  }
 }
